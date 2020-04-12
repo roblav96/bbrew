@@ -3,28 +3,33 @@
 	"version": "0.0.1",
 	"description": "A better Homebrew CLI",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"files": [
-		"dist"
+		"/bin",
+		"/dist",
+		"/oclif.manifest.json"
 	],
 	"bin": {
-		"bbrew": "dist/cli.js"
+		"bbrew": "./bin/run"
 	},
 	"scripts": {
-		"prepublishOnly": "del dist; tsc",
+		"postpack": "del oclif.manifest.json",
+		"prepack": "del dist; tsc --build; oclif-dev manifest; oclif-dev readme",
 		"start": "node --require ts-node/register/transpile-only src/index.ts",
 		"watch": "cross-env NODE_ENV=development nodemon --quiet --watch src --ext ts --exec \"node --inspect --require ts-node/register/transpile-only --require node-env-dev\" src/index.ts"
 	},
 	"dependencies": {
-		"enquirer": "^2.3.5",
+		"@oclif/command": "^1.5.19",
+		"@oclif/config": "^1.14.0",
+		"@oclif/plugin-help": "^2.2.3",
 		"fs-extra": "^9.0.0",
 		"lodash": "^4.17.15",
-		"mri": "^1.1.5",
 		"popsicle": "^12.0.5"
 	},
 	"devDependencies": {
+		"@oclif/dev-cli": "^1.22.2",
 		"@types/fs-extra": "^8.1.0",
 		"@types/lodash": "^4.14.149",
-		"@types/mri": "^1.1.0",
 		"@types/node": "^13.11.1",
 		"cross-env": "^7.0.2",
 		"del-cli": "^3.0.0",
@@ -33,6 +38,13 @@
 		"nodemon": "^2.0.3",
 		"ts-node": "^8.8.2",
 		"typescript": "^3.8.3"
+	},
+	"oclif": {
+		"commands": "./dist/commands",
+		"bin": "bbrew",
+		"plugins": [
+			"@oclif/plugin-help"
+		]
 	},
 	"keywords": [
 		"brew",

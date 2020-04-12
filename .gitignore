@@ -1,4 +1,6 @@
-dist
+/dist
+/lib
+/tmp
 node_modules
 
 *.log*
