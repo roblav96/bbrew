@@ -1,2 +1,2 @@
 # bbrew
-A better Homebrew Formulae CLI tool
+A better Homebrew CLI
