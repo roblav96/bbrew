@@ -39,11 +39,11 @@
 		"homebrew",
 		"linuxbrew",
 		"cli",
+		"command-line",
+		"terminal",
 		"search",
-		"package",
-		"browser",
-		"formulae",
-		"formula"
+		"package-manager",
+		"formulae"
 	],
 	"license": "Unlicense",
 	"author": "Robert Laverty <roblav96@gmail.com> (https://github.com/roblav96)",
