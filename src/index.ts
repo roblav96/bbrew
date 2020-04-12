@@ -1,2 +1,1 @@
-import * as _ from 'lodash'
-
+export { run } from '@oclif/command'
