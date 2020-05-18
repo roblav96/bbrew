@@ -20,17 +20,17 @@ export async function search(query: string) {
 	cores = cores.filter((v) => {
 		return `${v.name} ${v.aliases.join(' ')} ${v.desc}`.toLowerCase().includes(query)
 	})
-	console.log(`cores ->`, cores)
+	console.log(`➤➤➤➤ cores ->`, cores.length)
 	casks = casks.filter((v) => {
 		return `${v.token} ${v.name.join(' ')}`.toLowerCase().includes(query)
 	})
-	console.log(`casks ->`, casks)
+	console.log(`➤➤➤➤ casks ->`, casks.length)
 }
 
 export interface HomebrewSearchResult {}
 
+setInterval(Function, 1 << 30)
 process.nextTick(async () => {
-	setInterval(Function, 1 << 30)
 	let response = await search('clang')
 	console.log(`response ->`, response)
 })
