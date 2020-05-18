@@ -29,3 +29,5 @@ export default class SearchCommand extends Command {
 		this.log(`results ->`, results)
 	}
 }
+
+setInterval(Function, 1 << 30)

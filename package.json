@@ -18,30 +18,30 @@
 		"build": "del dist; tsc --declaration",
 		"watch": "del dist; npm-run-all --silent --parallel watch:tsc 'watch:nodemon -- {@}' --",
 		"watch:tsc": "tsc --watch --preserveWatchOutput",
-		"watch:nodemon": "wait-for-change dist && cross-env NODE_ENV=development nodemon --quiet --no-stdin --watch dist --ext js --exec 'node --inspect --require node-env-dev' bin/run"
+		"watch:nodemon": "wait-for-change dist && sleep 1 && nodemon --quiet --no-stdin --watch dist --ext js --exec 'node --require node-env-dev' bin/run"
 	},
 	"dependencies": {
-		"@oclif/command": "^1.5.19",
-		"execa": "^4.0.0",
+		"@oclif/command": "^1.6.1",
+		"execa": "^4.0.1",
 		"fs-extra": "^9.0.0",
-		"keyv": "^4.0.0",
-		"keyv-file": "^0.1.13",
+		"keyv": "^4.0.1",
+		"keyv-file": "^0.2.0",
 		"lodash": "^4.17.15",
 		"popsicle": "^12.0.5"
 	},
 	"devDependencies": {
 		"@oclif/dev-cli": "^1.22.2",
-		"@types/fs-extra": "^8.1.0",
-		"@types/lodash": "^4.14.149",
-		"@types/node": "^13.11.1",
+		"@types/fs-extra": "^9.0.0",
+		"@types/lodash": "^4.14.151",
+		"@types/node": "^14.0.1",
 		"cross-env": "^7.0.2",
-		"del-cli": "^3.0.0",
+		"del-cli": "^3.0.1",
 		"dts-generate": "^1.4.5",
 		"node-env-dev": "^1.8.25",
-		"nodemon": "^2.0.3",
+		"nodemon": "^2.0.4",
 		"npm-run-all": "^4.1.5",
-		"ts-node": "^8.8.2",
-		"typescript": "^3.8.3",
+		"ts-node": "^8.10.1",
+		"typescript": "^3.9.2",
 		"wait-for-change": "^1.1.1"
 	},
 	"oclif": {
