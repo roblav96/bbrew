@@ -26,8 +26,6 @@ export default class SearchCommand extends Command {
 	async run() {
 		let { args, flags } = this.parse(SearchCommand)
 		let results = await homebrew.search(args.query)
-		this.log(`results ->`, results)
+		console.log(`results ->`, results)
 	}
 }
-
-setInterval(Function, 1 << 30)

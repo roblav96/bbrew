@@ -17,8 +17,8 @@
 		"prepack": "npm run build; oclif-dev manifest; oclif-dev readme",
 		"build": "del dist; tsc --declaration",
 		"watch": "del dist; npm-run-all --silent --parallel watch:tsc 'watch:nodemon -- {@}' --",
-		"watch:tsc": "tsc --watch --preserveWatchOutput",
-		"watch:nodemon": "wait-for-change dist && sleep 1 && nodemon --quiet --no-stdin --watch dist --ext js --exec 'node --require node-env-dev' bin/run"
+		"watch:tsc": "tsc --watch --incremental --preserveWatchOutput",
+		"watch:nodemon": "wait-for-change dist && sleep 0.1 && cross-env NODE_ENV=development nodemon --quiet --no-stdin --delay 0.1 --watch dist --ext js --exec 'node --inspect --require node-env-dev' bin/run"
 	},
 	"dependencies": {
 		"@oclif/command": "^1.6.1",
